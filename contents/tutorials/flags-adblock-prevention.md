@@ -1,14 +1,22 @@
 ---
-title: Preventing feature flags from being blocked
+title: How to prevent feature flags from being blocked
 sidebar: Docs
 showTitle: true
+date: 2025-11-03
+author:
+  - dustin-byrne
+showTitle: true
+sidebar: Docs
+tags:
+  - feature flags
+  - configuration
 ---
 
 Ad blockers can interfere with feature flag functionality by blocking requests to PostHog's feature flag endpoints. This guide explains how PostHog and your application can work together to prevent this.
 
 ## How PostHog prevents blocking
 
-PostHog periodically monitors adblock filter lists to ensure our feature flag endpoints remain accessible. When we detect that a feature flag endpoint has been added to a blocklist:
+PostHog periodically reviews adblock filter lists to ensure our feature flag endpoints remain accessible. When we detect that a feature flag endpoint has been added to a blocklist:
 
 1. We investigate why the endpoint was blocked
 2. We open pull requests to affected filter lists to request removal
